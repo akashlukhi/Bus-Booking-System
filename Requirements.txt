@@ -1,0 +1,17 @@
+Project Title : "Bus-Ticket Reservation"
+Python version : 3.8.1
+Django version : 3.0.2
+Other packages : none
+List of requirements implemented :
+[admin name = "akash" , admin password = "lukhi123"]
+1. Login Module.
+2. Sign-up Module.
+3. Check Seat availability for Resevation.
+4. Make a Reservations.
+5. Payment Module.
+6. Download a print of Your E-Ticket.
+7. View Seats Which are Booked by That User.
+8. Cancel Reservation Module.
+9. Contact Us and About Us module.
+10. View Devloper Details in About Us.
+11. Securely Logout from the App.

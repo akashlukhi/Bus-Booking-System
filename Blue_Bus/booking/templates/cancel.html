@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cansel Reservation</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'booking/cancelUI.css' %}" />
+
+</head>
+<style>
+	
+        a1 {
+        margin:5px 8px;
+        text-decoration:  none;
+        font-size: 2em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #2196f3;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        padding: 10px;
+        position: relative;
+        overflow: hidden;
+        background: #2196f3;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        height: 48px;
+        width: 48px;
+        font-size: 20px;
+        transition: box-shadow 1s ease-in-out,
+         transform 1s ease-in-out;
+        ;
+    }
+    a1:hover {
+        color:#255784 ;
+        background: #2196f3;
+        box-shadow: 0 0 20px #2196f3 , 0 0 40px #2196f3 , 0 0 50px #2196f3;
+        transform:  scale(1.2);
+        transition: box-shadow 1s ease-in-out,
+        transform 1s ease-in-out;
+    }
+    i {
+        color: white;
+    }</style>
+<body>
+    
+<section class="price-sec">
+    <div class="container-fluid">
+        <div class="container">
+          <div class="row ptables-head">
+            <h1 class="text-center" align="center">Your Reservation</h1>
+          </div>
+            <div class="row">
+            <table align="center">
+                <tr>
+                        {% for s in a%}
+                    <td>
+                   <div class="col-sm-4 price-table">
+                    <div class="card text-center">
+                        <div class="title">
+                            <i class="fa fa-bus"></i>
+                            <h2>{{s.bus_name}}</h2>
+                            <p>({{s.bus_plate_no}})</p>
+                        </div>
+                        <div class="price">
+                            <h3>{{s.passenger_name}}</h3>
+                        </div>
+                        <div class="option">
+                            <ul>
+                                <li><i class="fa fa-check"></i>Seat No:- {{s.seat_no}}</li>
+                                <li><i class="fa fa-check"></i>From:- {{s.source}} </li>
+                                <li><i class="fa fa-check"></i>To:- {{s.destination}}</li>
+                            </ul>
+                        </div>
+                        <span>
+                        <a href="{% url 'remove' s.bus_plate_no s.seat_no %}" onclick="return confirm('Are You sure To Cancel This Reservation')">Cancel Now</a>
+                    </span> 
+                    </div>
+                
+                </div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            {% endfor %}
+        </tr>
+    </table>
+    &nbsp;
+    <center>
+            <a1>
+					<a href="/">
+						<i class="fa fa-home"></i>
+					</a>
+				</a1>
+    </center>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+  
+    </script>
+</body>
+</html>

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style type="text/css">
+        input[type="checkbox"] {
+            display: none;
+        }
+    </style>
+</head>
+<style>
+        a1 {
+        margin:5px 8px;
+        text-decoration:  none;
+        font-size: 2em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #2196f3;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        padding: 10px;
+        position: relative;
+        overflow: hidden;
+        background: #2196f3;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        height: 48px;
+        width: 48px;
+        font-size: 20px;
+        transition: box-shadow 1s ease-in-out,
+         transform 1s ease-in-out;
+        ;
+    }
+    a1:hover {
+        color:#255784 ;
+        background: #2196f3;
+        box-shadow: 0 0 20px #2196f3 , 0 0 40px #2196f3 , 0 0 50px #2196f3;
+        transform:  scale(1.2);
+        transition: box-shadow 1s ease-in-out,
+        transform 1s ease-in-out;
+    }
+    i {
+        color: white;
+    }
+    
+    </style>
+<body>
+    	<a1>
+				<a href="/">
+					<i class="fa fa-home"></i>
+				</a>
+			</a1>
+	
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'booking/seat.css' %}" />
+    {% for list in n %}
+    <form action="/booking/seat/" method="post" name="seat">{% csrf_token %}
+        <h1 class="name">{{list.bus_name}}</h1>
+        <h6 class="name">({{list.plate_no}})</h6>
+        <input type="checkbox" name="checked[]" value="{{ list.plate_no }}" checked readonly />
+        <div class="bus">
+            <div class="bus-seat">
+                <div class="upper">
+                    
+                    <h1>Upper</h1>
+                    <div class="upper-seats">
+                        {%if list.U1 %}
+                        <label for="one">
+                            <div class="seat b" id="b">
+                                <div class="num">1</div>
+                                <input type="checkbox" name="checked[]" id="one" value="U1">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="one">
+                            <div class="seat">
+                                <div class="num">1</div>
+                                <input type="checkbox" name="checked[]" id="one" value="U1">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U2 %}
+                        <label for="two">
+                            <div class="seat b" id="b">
+                                <div class="num">2</div>
+                                <input type="checkbox" name="checked[]" id="two" value="U2">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="two">
+                            <div class="seat">
+
+                                <div class="num">2</div>
+
+                                <input type="checkbox" name="checked[]" id="two" value="U2">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U3 %}
+                        <label for="three">
+                            <div class="seat b" id="b">
+                                <div class="num">3</div>
+                                <input type="checkbox" name="checked[]" id="three" value="U3">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="three">
+                            <div class="seat">
+                                <div class="num">3</div>
+                                <input type="checkbox" name="checked[]" id="three" value="U3">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U4 %}
+                        <label for="four">
+                            <div class="seat b" id="b">
+                                <div class="num">4</div>
+                                <input type="checkbox" name="checked[]" id="four" value="U4">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="four">
+                            <div class="seat">
+                                <div class="num">4</div>
+                                <input type="checkbox" name="checked[]" id="four" value="U4">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U5 %}
+                        <label for="five">
+                            <div class="seat b" id="b">
+                                <div class="num">5</div>
+                                <input type="checkbox" name="checked[]" id="five" value="U5">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="five">
+                            <div class="seat">
+                                <div class="num">5</div>
+                                <input type="checkbox" name="checked[]" id="five" value="U5">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U6 %}
+                        <label for="six">
+                            <div class="seat b" id="b">
+                                <div class="num">6</div>
+                                <input type="checkbox" name="checked[]" id="six" value="U6">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="six">
+                            <div class="seat">
+                                <div class="num">6</div>
+                                <input type="checkbox" name="checked[]" id="six" value="U6">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U7 %}
+                        <label for="seven">
+                            <div class="seat b" id="b">
+                                <div class="num">7</div>
+                                <input type="checkbox" name="checked[]" id="seven" value="U7">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="seven">
+                            <div class="seat">
+                                <div class="num">7</div>
+                                <input type="checkbox" name="checked[]" id="seven" value="U7">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U8 %}
+                        <label for="eight">
+                            <div class="seat b" id="b">
+                                <div class="num">8</div>
+                                <input type="checkbox" name="checked[]" id="eight" value="U8">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="eight">
+                            <div class="seat">
+                                <div class="num">8</div>
+                                <input type="checkbox" name="checked[]" id="eight" value="U8">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U9 %}
+                        <label for="nine">
+                            <div class="seat b" id="b">
+                                <div class="num">9</div>
+                                <input type="checkbox" name="checked[]" id="nine" value="U9">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="nine">
+                            <div class="seat">
+                                <div class="num">9</div>
+                                <input type="checkbox" name="checked[]" id="nine" value="U9">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U10 %}
+                        <label for="ten">
+                            <div class="seat b" id="b">
+                                <div class="num">10</div>
+                                <input type="checkbox" name="checked[]" id="TEN" value="U10">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="ten">
+                            <div class="seat">
+                                <div class="num">10</div>
+                                <input type="checkbox" name="checked[]" id="ten" value="U10">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U11 %}
+                        <label for="eleven">
+                            <div class="seat b" id="b">
+                                <div class="num">11</div>
+                                <input type="checkbox" name="checked[]" id="eleven" value="U11">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="eleven">
+                            <div class="seat">
+                                <div class="num">11</div>
+                                <input type="checkbox" name="checked[]" id="eleven" value="U11">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U12 %}
+                        <label for="twleve">
+                            <div class="seat b" id="b">
+                                <div class="num">12</div>
+                                <input type="checkbox" name="checked[]" id="twleve" value="U12">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="twleve">
+                            <div class="seat">
+                                <div class="num">12</div>
+                                <input type="checkbox" name="checked[]" id="twleve" value="U12">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U13 %}
+                        <label for="thirteen">
+                            <div class="seat b" id="b">
+                                <div class="num">13</div>
+                                <input type="checkbox" name="checked[]" id="thirteen" value="U13">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="thirteen">
+                            <div class="seat">
+                                <div class="num">13</div>
+                                <input type="checkbox" name="checked[]" id="thirteen" value="U13">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U14 %}
+                        <label for="fourteen">
+                            <div class="seat b" id="b">
+                                <div class="num">14</div>
+                                <input type="checkbox" name="checked[]" id="fourteen" value="U14">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="fourteen">
+                            <div class="seat">
+                                <div class="num">14</div>
+                                <input type="checkbox" name="checked[]" id="fourteen" value="U14">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U15 %}
+                        <label for="fifteen">
+                            <div class="seat b" id="b">
+                                <div class="num">15</div>
+                                <input type="checkbox" name="checked[]" id="fifteen" value="U15">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="fifteen">
+                            <div class="seat">
+                                <div class="num">15</div>
+                                <input type="checkbox" name="checked[]" id="fifteen" value="U15">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U16 %}
+                        <label for="sixteen">
+                            <div class="seat b" id="b">
+                                <div class="num">16</div>
+                                <input type="checkbox" name="checked[]" id="sixteen" value="U16">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="sixteen">
+                            <div class="seat">
+                                <div class="num">16</div>
+                                <input type="checkbox" name="checked[]" id="sixteen" value="U16">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U17 %}
+                        <label for="seventeen">
+                            <div class="seat b" id="b">
+                                <div class="num">17</div>
+                                <input type="checkbox" name="checked[]" id="seventeen" value="U17">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="seventeen">
+                            <div class="seat">
+                                <div class="num">17</div>
+                                <input type="checkbox" name="checked[]" id="seventeen" value="U17">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.U18 %}
+                        <label for="eighteen">
+                            <div class="seat b" id="b">
+                                <div class="num">18</div>
+                                <input type="checkbox" name="checked[]" id="eighteen" value="U18">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="eighteen">
+                            <div class="seat">
+                                <div class="num">18</div>
+                                <input type="checkbox" name="checked[]" id="eighteen" value="U18">
+                            </div>
+                        </label>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="lower">
+                    
+                    <h1>Lower</h1>
+                    <div class="upper-seats">
+                        {%if list.L1 %}
+                        <label for="one1">
+                            <div class="seat b" id="b">
+                                <div class="num">1</div>
+                                <input type="checkbox" name="checked[]" id="one1" value="U1">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="one1">
+                            <div class="seat">
+                                <div class="num">1</div>
+                                <input type="checkbox" name="checked[]" id="one1" value="L1">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L2 %}
+                        <label for="two1">
+                            <div class="seat b" id="b">
+                                <div class="num">2</div>
+                                <input type="checkbox" name="checked[]" id="two1" value="L2">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="two1">
+                            <div class="seat">
+
+                                <div class="num">2</div>
+
+                                <input type="checkbox" name="checked[]" id="two1" value="L2">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L3 %}
+                        <label for="three1">
+                            <div class="seat b" id="b">
+                                <div class="num">3</div>
+                                <input type="checkbox" name="checked[]" id="three1" value="L3">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="three1">
+                            <div class="seat">
+                                <div class="num">3</div>
+                                <input type="checkbox" name="checked[]" id="three1" value="L3">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L4 %}
+                        <label for="four1">
+                            <div class="seat b" id="b">
+                                <div class="num">4</div>
+                                <input type="checkbox" name="checked[]" id="four1" value="L4">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="four1">
+                            <div class="seat">
+                                <div class="num">4</div>
+                                <input type="checkbox" name="checked[]" id="four1" value="L4">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L5 %}
+                        <label for="five1">
+                            <div class="seat b" id="b">
+                                <div class="num">5</div>
+                                <input type="checkbox" name="checked[]" id="five1" value="L5">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="five1">
+                            <div class="seat">
+                                <div class="num">5</div>
+                                <input type="checkbox" name="checked[]" id="five1" value="L5">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L6 %}
+                        <label for="six1">
+                            <div class="seat b" id="b">
+                                <div class="num">6</div>
+                                <input type="checkbox" name="checked[]" id="six1" value="L6">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="six1">
+                            <div class="seat">
+                                <div class="num">6</div>
+                                <input type="checkbox" name="checked[]" id="six1" value="L6">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L7 %}
+                        <label for="seven1">
+                            <div class="seat b" id="b">
+                                <div class="num">7</div>
+                                <input type="checkbox" name="checked[]" id="seven1" value="L7">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="seven1">
+                            <div class="seat">
+                                <div class="num">7</div>
+                                <input type="checkbox" name="checked[]" id="seven1" value="L7">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L8 %}
+                        <label for="eight1">
+                            <div class="seat b" id="b">
+                                <div class="num">8</div>
+                                <input type="checkbox" name="checked[]" id="eight1" value="L8">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="eight1">
+                            <div class="seat">
+                                <div class="num">8</div>
+                                <input type="checkbox" name="checked[]" id="eight1" value="L8">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L9 %}
+                        <label for="nine1">
+                            <div class="seat b" id="b">
+                                <div class="num">9</div>
+                                <input type="checkbox" name="checked[]" id="nine1" value="L9">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="nine1">
+                            <div class="seat">
+                                <div class="num">9</div>
+                                <input type="checkbox" name="checked[]" id="nine1" value="L9">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L10 %}
+                        <label for="ten1">
+                            <div class="seat b" id="b">
+                                <div class="num">10</div>
+                                <input type="checkbox" name="checked[]" id="TEN1" value="L10">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="ten1">
+                            <div class="seat">
+                                <div class="num">10</div>
+                                <input type="checkbox" name="checked[]" id="ten1" value="L10">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L11 %}
+                        <label for="eleven1">
+                            <div class="seat b" id="b">
+                                <div class="num">11</div>
+                                <input type="checkbox" name="checked[]" id="eleven1" value="L11">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="eleven1">
+                            <div class="seat">
+                                <div class="num">11</div>
+                                <input type="checkbox" name="checked[]" id="eleven1" value="L11">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L12 %}
+                        <label for="twleve1">
+                            <div class="seat b" id="b">
+                                <div class="num">12</div>
+                                <input type="checkbox" name="checked[]" id="twleve1" value="L12">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="twleve1">
+                            <div class="seat">
+                                <div class="num">12</div>
+                                <input type="checkbox" name="checked[]" id="twleve1" value="L12">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L13 %}
+                        <label for="thirteen1">
+                            <div class="seat b" id="b">
+                                <div class="num">13</div>
+                                <input type="checkbox" name="checked[]" id="thirteen1" value="L13">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="thirteen1">
+                            <div class="seat">
+                                <div class="num">13</div>
+                                <input type="checkbox" name="checked[]" id="thirteen1" value="L13">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L14 %}
+                        <label for="fourteen1">
+                            <div class="seat b" id="b">
+                                <div class="num">14</div>
+                                <input type="checkbox" name="checked[]" id="fourteen1" value="L14">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="fourteen1">
+                            <div class="seat">
+                                <div class="num">14</div>
+                                <input type="checkbox" name="checked[]" id="fourteen1" value="L14">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L15 %}
+                        <label for="fifteen1">
+                            <div class="seat b" id="b">
+                                <div class="num">15</div>
+                                <input type="checkbox" name="checked[]" id="fifteen1" value="L15">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="fifteen1">
+                            <div class="seat">
+                                <div class="num">15</div>
+                                <input type="checkbox" name="checked[]" id="fifteen1" value="L15">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L16 %}
+                        <label for="sixteen1">
+                            <div class="seat b" id="b">
+                                <div class="num">16</div>
+                                <input type="checkbox" name="checked[]" id="sixteen1" value="L16">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="sixteen1">
+                            <div class="seat">
+                                <div class="num">16</div>
+                                <input type="checkbox" name="checked[]" id="sixteen1" value="L16">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L17 %}
+                        <label for="seventeen1">
+                            <div class="seat b" id="b">
+                                <div class="num">17</div>
+                                <input type="checkbox" name="checked[]" id="seventeen1" value="L17">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="seventeen1">
+                            <div class="seat">
+                                <div class="num">17</div>
+                                <input type="checkbox" name="checked[]" id="seventeen1" value="L17">
+                            </div>
+                        </label>
+                        {% endif %}
+                        {%if list.L18 %}
+                        <label for="eighteen1">
+                            <div class="seat b" id="b">
+                                <div class="num">18</div>
+                                <input type="checkbox" name="checked[]" id="eighteen1" value="L18">
+                            </div>
+                        </label>
+                        {% else %}
+                        <label for="eighteen1">
+                            <div class="seat">
+                                <div class="num">18</div>
+                                <input type="checkbox" name="checked[]" id="eighteen1" value="L18">
+                            </div>
+                        </label>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="colors">
+                <div class="not-booked sec">
+                    <h4>Not Booked</h4>
+                    <div class="box nb"></div>
+                </div>
+                <div class="booked sec">
+                    <h4>Booked</h4>
+                    <div class="box b1" id="b"></div>
+                </div>
+                <div class="selected sec">
+                    <h4>Selected</h4>
+                    <div class="box s"></div>
+                </div>
+            </div>
+            <table border="0">
+            <tr>
+            
+                <td align="right">
+                    <button type="submit" class="button">Book Now</button>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td align="center">
+                    <button type="reset" class="button">Clear seats</button>
+                </td>
+            
+            </tr>
+        </table>
+            {%endfor%}
+        </div>
+
+        <script>
+            let s = document.querySelectorAll('.upper .seat');
+            var i = 1
+            
+            s.forEach(a => {
+                a.addEventListener('click', (e) => {
+                    if(e.target.classList.value.includes(' s')) {
+                        e.target.classList.remove('s');
+                        console.log(e.target.classList.value.includes(' s'))
+                    }else {
+                        e.target.classList.add('s');
+                        console.log(e.target.classList.value.includes(' s'))
+                    }
+                });
+            });
+            let j = 1
+            let s1 = document.querySelectorAll('.lower .seat');
+            s1.forEach(a1 => {
+                a1.addEventListener('click', (e) => {
+                    if(e.target.classList.value.includes(' s')) {
+                        e.target.classList.remove('s');
+                        console.log(e.target.classList.value.includes(' s'))
+                    }else {
+                        e.target.classList.add('s');
+                        console.log(e.target.classList.value.includes(' s'))
+                    }
+                });
+            });
+            function fun() {
+                console.log('hello')
+            }
+            console.log(s1);
+            let b = document.querySelectorAll('.b');
+            b.forEach(b1=>{
+            
+                b1.children[1].setAttribute('disabled',true)
+                b1.removeEventListener('click',fun,false)
+            });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            font-weight: 200;
+            font-size: 14px;
+        }
+
+        .header {
+            font-size: 20px;
+            font-weight: 100;
+            text-align: center;
+            color: #cf2828;
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: 100;
+            /* text-align: right;*/
+            padding: 10px 20px 0px 20px;
+        }
+
+        .title span {
+            color: #007cae;
+        }
+
+        .details {
+            padding: 10px 20px 0px 20px;
+            text-align: left !important;
+            /*margin-left: 40%;*/
+        }
+
+        .hrItem {
+            border: none;
+            height: 1px;
+            /* Set the hr color */
+            color: #333;
+            /* old IE */
+            background-color: #fff;
+            /* Modern Browsers */
+        }
+        .line {
+            border: none;
+            height: 1px;
+            /* Set the hr color */
+            color: rgb(228, 27, 27);
+            /* old IE */
+            background-color: #fff;
+            /* Modern Browsers */
+        }
+        
+    </style>
+</head>
+
+<body>{% csrf_token%}
+
+    <div class='wrapper'>
+        <div class='header'>
+            <p class='title'>Bus Reservation Ticket</p>
+        </div>
+        <div>
+            <div class='details'>
+                <table border="0">
+                    <tr>
+                        <td>
+                            <h1>
+                                <font size="+4">BLUE BUS</font>
+                            </h1>
+                        </td>
+                        <td align="right">
+                            <h2>
+                                <font size="+4">E-Ticket</font>
+                            </h2>
+                        </td>
+                    </tr>
+                    <hr class='hrItem' />
+                    <tr>
+                        <td>
+                            {{source}}--->{{dest}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>{{bus_name}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Boarding TIme:<br>
+                            {{b_time}}
+                        </td>
+                        <td align="right">
+                            Drop TIme:<br>
+                            {{d_time}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Blue Bus Headquarter Office:<br>
+                            Dharmshingh Desai University,<br>
+                            College Road,Nadiad,Gujarat
+                        </td>
+                    </tr>
+
+                </table>
+                <hr class='line' />
+                <h3>Traveller Details</h3>
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <h6>Traveller Name</h6>
+                        </td>
+                        <td align="center">
+                            <h6>Gender</h6>
+                        </td>
+                        <td align="right">
+                            <h6>Age</h6>
+                        </td>
+                        <td align="right" colspan="2">
+                            <h6>Seat Number</h6>
+                        </td>
+                    </tr>
+                    <hr class='line' />
+                    <tr>
+                        <td colspan="2">
+                            <font size="+1">
+                                {% for n in name%}
+                                {{n}}</br>
+                                {%endfor%}
+                            </font>
+                        </td>
+                        <td align="center">
+                            <font size="+1" color="grey">
+                                {% for n in gender%}
+                                {{n}}</br>
+                                {%endfor%}
+                            </font>
+                        </td>
+                        <td align="right">
+                            <font size="+1" color="grey">
+                                {% for n in age%}
+                                {{n}}</br>
+                                {%endfor%}
+                            </font>
+                        </td>
+                        <td align="right" colspan="2">
+                            <font size="+1">
+                                {% for n in seat%}
+                                {{n}}</br>
+                                {%endfor%}
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+                <p >
+                    <font size="+3" >Total fare: <font color="red">{{rate}} INR</font></font>
+                </p>
+                (Inclusive Of all Taxes)
+                <h3>Note: It is recommended to carry printout of the ticket. Certain Bus Operators don't accept E-Ticket
+                </h3>
+                <hr class='hrItem' />
+                <h2>Important Information</h2>
+                <ul>
+                        <font size="+1">
+                    <li>
+                        It is recommended to carry printout of the attached e-ticket. Certain Bus Operators might not
+                        accept the e-ticket<br>
+                    </li>
+                    <li>
+                        Passengers are required to carry the valid ID proof at the time of boarding the bus.<br>
+                    </li>
+                    <li>
+                        Cancel your booking before One hour of Journy.<br>
+                    </li>
+                    </font>
+                </ul>
+                <h2 align="center">HAPPY JOURNY</h2>
+            </div>
+
+        </div>
+</body>
+
+</html>

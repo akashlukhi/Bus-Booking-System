@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>Bus List</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<style>
+        a1 {
+            text-decoration:  none;
+            font-size: 2em;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #2196f3;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
+            background: #2196f3;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            height: 25px;
+            width: 25px;
+            font-size: 20px;
+            transition: box-shadow 1s ease-in-out,
+             transform 1s ease-in-out;
+            ;
+        }
+        a1:hover {
+            color:#255784 ;
+            background: #2196f3;
+            box-shadow: 0 0 20px #2196f3 , 0 0 40px #2196f3 , 0 0 50px #2196f3;
+            transform:  scale(1.2);
+            transition: box-shadow 1s ease-in-out,
+            transform 1s ease-in-out;
+        }
+        i {
+            color: white;
+        }
+        </style>
+<body>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'booking/main.css' %}" />
+    <form action="showbus" method="POST">{% csrf_token%}
+            <a1>
+					<a href="/">
+						<i class="fa fa-home"></i>
+					</a>
+				</a1>
+        <h1><span class="blue"> <span class="yellow">..Welcome to Blue Bus..</span>  </h1>
+        <table class="container">
+            {% if info%}
+            <h4>Please Select a Bus</h4>
+                <thead>
+                    <tr>
+                        <th>
+                            <h1>Bus Name</h1>
+                        </th>
+                        <th>
+                            <h1>Departure</h1>
+                        </th>
+                        <th>
+                            <h1>Arrival</h1>
+                        </th>
+                        <th>
+                            <h1>Fare</h1>
+                        </th>
+                    </tr>
+                </thead>
+                {% for list in info %}
+                <tbody>
+                    <tr>
+                        <th><h3>{{list.bus_name}}</h3></th>
+                        <th><p>{{list.departure_time}}</p></th>
+                        <th><p>{{list.boarding_time}}</p></th>
+                        <th><p>{{list.rate}} INR</p></td>
+                        <td><h2><a href="{% url 'showbus' list.plate_no %}">showbus</a></h2></td>
+                    </tr>
+    
+                </tbody>
+                {% endfor %}
+            {% else %}
+            <br>
+            <center>
+                    <img src="{% static 'no_bus.png'  %}" alt="no bus" width="334" height="342">
+            </center>
+             <h2> <font size="+3">OOPS!...</font></h2>
+            <h3 align="center"><font size="+2">No Buses Found....... :(</font></h3>
+            {% endif %}
+        </table>
+        
+    </form>
+</body>
+
+</html>

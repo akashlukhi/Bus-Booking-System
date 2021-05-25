@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+    body {
+        background: -webkit-linear-gradient(left, #149edf, #25b7c4);
+        background: linear-gradient(to right, #19aedb, #4825e2);
+        font-family: 'Roboto', sans-serif;
+    }
+
+    section {
+        margin: 50px;
+    }
+
+    h1 {
+        color: #58f76d;
+    }
+
+    h4 {
+        color: black;
+    }
+
+    button {
+        align-self: center;
+        border: none;
+        background: none;
+        padding: 10px 20px;
+        color: #eee;
+        background: #e28e10;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background: #eb6309;
+    }
+
+    input[type="checkbox"] {
+        width: 1px;
+        height: 1px;
+    }
+    a1 {
+        margin:5px 8px;
+        text-decoration:  none;
+        font-size: 2em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #2196f3;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        padding: 10px;
+        position: relative;
+        overflow: hidden;
+        background: #2196f3;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+        font-size: 20px;
+        transition: box-shadow 1s ease-in-out,
+         transform 1s ease-in-out;
+        ;
+    }
+    a1:hover {
+        color:#255784 ;
+        background: #2196f3;
+        box-shadow: 0 0 20px #2196f3 , 0 0 40px #2196f3 , 0 0 50px #2196f3;
+        transform:  scale(1.2);
+        transition: box-shadow 1s ease-in-out,
+        transform 1s ease-in-out;
+    }
+    i {
+        color: white;
+    }
+</style>
+
+<body>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="neonLightHover.css">
+    <a1>
+        <a href="/">
+            <i class="fa fa-home"></i>
+        </a>
+    </a1>   
+    <form action="/booking/get/">
+        {% for list in d %}
+        <input type="checkbox" name="d[]" value="{{list}}" checked readonly>
+        {%endfor %}
+        <h1 align="center">
+            Thank You For Booking Ticket Form Our Trustable Website...
+        </h1>
+        <center>
+            <img src="{% static 'thanks.png'  %}" alt="happy" width="134" height="142">
+        </center>
+        <h4 align="center">
+            To Download Ticket Click Below Button.
+        </h4>
+        <center>
+            <button type="submit">
+                Download PDF
+            </button>
+     
+        </center>
+    </form>
+    &nbsp;       &nbsp;       &nbsp;       &nbsp;
+    <form action="/booking/ticketbook/">
+        <center>
+            <button type="submit">
+                Make a New reservation
+            </button>
+        </center>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+.count-icon img {
+  width: 45px;
+}
+
+.services-item {
+  -webkit-box-shadow: 3px 3px 8px 0px rgba(145, 145, 145, 0.1) !important;
+          box-shadow: 3px 3px 8px 0px rgba(145, 145, 145, 0.1) !important;
+}
+
+.services-item img {
+  width: 50px;
+}
+
+.services-item .text-muted {
+  color: #5f5f5f !important;
+}
+
+.services-item .text-dark {
+  color: #3c3c3c !important;
+}
+
+.services-item .services-content {
+  padding-left: 4rem !important;
+  padding-right: 1rem;
+}
+
+.timeline-items .timeline-border {
+  border-left: 2px solid;
+}
+
+.timeline-items .timeline-item:before {
+  display: none !important;
+}
+
+.timeline-items .timeline-icon {
+  border: none;
+  left: -9px !important;
+}
+
+.portfolio .portfolio-item-content::before {
+  background-color: rgba(96, 185, 189, 0.8);
+}
+
+.portfolio .portfolio-icon button {
+  background-color: #ff6467;
+  color: #fafafa;
+}
+
+.portfolio .portfolio-icon a {
+  background-color: #fbdd62;
+  color: #fafafa;
+}
+
+.blog-link a {
+  color: #60b9bd !important;
+}
+
+.blog-link a:hover {
+  color: #00949b !important;
+}
+
+.hero-06 .hero-social a i:hover {
+  color: #018abe;
+}
+
+.flat-demo header, .flat-demo .box-border {
+  background-color: #fefefe !important;
+  -webkit-box-shadow: 3px 3px 8px 0px rgba(145, 145, 145, 0.1) !important;
+          box-shadow: 3px 3px 8px 0px rgba(145, 145, 145, 0.1) !important;
+}
+
+.flat-demo .portfolio .pill-button:hover, .flat-demo .portfolio .pill-button.active {
+  background-color: #60b9bd !important;
+}
+
+.flat-demo .portfolio .portfolio-item-content {
+  -webkit-box-shadow: 3px 3px 8px 0px rgba(145, 145, 145, 0.1) !important;
+          box-shadow: 3px 3px 8px 0px rgba(145, 145, 145, 0.1) !important;
+}
+
+.flat-demo.arshia-dark header {
+  background-color: #2c2d30 !important;
+  -webkit-box-shadow: 3px 3px 3px #202125, -3px -3px 3px #3e3e3e !important;
+          box-shadow: 3px 3px 3px #202125, -3px -3px 3px #3e3e3e !important;
+}
+
+.flat-demo.arshia-dark .box-border {
+  background-color: rgba(52, 53, 57, 0.9) !important;
+  -webkit-box-shadow: 3px 3px 8px 0px rgba(145, 145, 145, 0.1) !important;
+          box-shadow: 3px 3px 8px 0px rgba(145, 145, 145, 0.1) !important;
+}
+
+.flat-demo.arshia-dark .portfolio .portfolio-item-content {
+  -webkit-box-shadow: 3px 3px 8px 0px rgba(145, 145, 145, 0.1) !important;
+          box-shadow: 3px 3px 8px 0px rgba(145, 145, 145, 0.1) !important;
+}
+
+.flat-demo.arshia-dark .image-border img {
+  border: 1px solid #5f5f5f;
+}
+/*# sourceMappingURL=colorfull-main.css.map */

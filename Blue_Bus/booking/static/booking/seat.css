@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: #333;
+}
+.name {
+    margin: 20px;
+    color: #eee;
+    text-align: center;
+}
+.bus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.upper-seats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 10px;
+}
+.upper {
+    padding: 10px 50px;
+    border-right: 2px solid #2d71c0;
+}
+.lower {
+    margin-left: 50px;
+}
+.upper h1 , .lower h1 {
+    color: #eee;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: underline overline;
+}
+label:nth-child(3n-1) {
+    margin-left: 60px;
+}
+.bus-seat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* label:nth-child(3n-2) {
+    margin-right: 50px;
+}
+label:nth-child(3n) {
+    margin-left: -60px;
+} */
+.upper-seats .seat {
+    width: 50px;
+    height: 50px;
+    background: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    text-decoration: none;
+    color: #333; 
+}
+.colors{
+    display: flex;
+    margin: 20px;
+    color: #eee;
+    justify-content: center;
+    align-items: center;
+}
+.sec {
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.box {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+.nb {
+    background: #eee !important;
+    color: #333 !important;
+}
+.b ,.b1{
+    background: red !important;
+    color: #eee !important;
+}
+.s {
+    background: #2d71c0 !important;
+    color: #eee !important;
+}
+button {
+    align-self: center;
+    border: none;
+    background: none;
+    padding: 10px 20px;
+    color: #eee;
+    background: #e28e10;
+    border-radius: 5px;
+}
+button:hover{
+    background: #eb6309;
+}
