@@ -2,7 +2,7 @@ Project Title : "Bus-Ticket Reservation"
 Python version : 3.8.1
 Django version : 3.0.2
 Other packages : none
-List of requirements implemented :
+List of Functionalities implemented :
 [admin name = "akash" , admin password = "lukhi123"]
 1. Login Module.
 2. Sign-up Module.
